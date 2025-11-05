@@ -38,26 +38,10 @@ header {
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 1.5rem 2rem;
   position: relative;
-
-  .instagram-link {
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-
-    .instagram-icon {
-      height: 50px;
-      width: 50px;
-      transition: opacity v.$transition-fast;
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-  }
 
   .nav-link,
   .nav-separator {
@@ -89,12 +73,45 @@ main {
 }
 
 footer {
-  align-self: center;
-  padding-bottom: 4rem;
-  text-align: center;
+  background-color: white;
+  padding: 3rem 2rem;
+  padding-top: 0;
+  width: 100%;
+}
 
-  p{
-    font-size: 1rem;
-    color: #000;
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-copyright {
+  font-size: 1rem;
+  color: black;
+  font-weight: 600;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  transition: opacity v.$transition-fast;
+
+  &:hover {
+    opacity: 0.7;
   }
+}
+
+.social-icon {
+  height: 30px;
+  width: 30px;
 }

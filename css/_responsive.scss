@@ -37,7 +37,7 @@
     gap: 3rem;
   }
 
-  .projects-grid {
+  .faq-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
@@ -58,7 +58,7 @@
   .services-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
 
     .service {
       padding: 2rem;
@@ -76,6 +76,7 @@
   .services-section {
     padding: 2rem 1rem;
     margin-top: 2rem;
+    min-height: auto;
 
     .section-title {
       margin-bottom: 3rem;
@@ -102,19 +103,34 @@
   }
 
   .about-section,
-  .projects-section,
+  .technologies-section,
+  .faq-section,
   .contact-section {
     padding: 3rem 1rem;
+  }
+
+  .carousel-container {
+    padding: 2rem 0 0 0;
   }
 
   footer {
     padding-bottom: 3rem;
   }
 
-  // Projects - Single column
-  .projects-grid {
+  // FAQ - Single column
+  .faq-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+
+    .faq-item {
+      h3 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
   }
 
   // Contact
@@ -159,7 +175,7 @@
 
     .services-grid {
       gap: 1.5rem;
-      padding: 0.5rem;
+      padding: 0.5rem 0.5rem 0 0.5rem;
 
       .service {
         padding: 1.5rem;
@@ -177,6 +193,7 @@
 
     .services-section {
       padding: 2rem 0.5rem;
+      min-height: auto;
 
       .section-title {
         margin-bottom: 2rem;
@@ -186,6 +203,14 @@
     // About
     .about-section {
       padding: 2rem 0.5rem;
+    }
+
+    .technologies-section {
+      padding: 2rem 0.5rem;
+    }
+
+    .carousel-container {
+      padding: 1.5rem 0 0 0;
     }
 
     .about-content {
@@ -201,35 +226,22 @@
       }
     }
 
-    // Projects
-    .projects-section {
+    // FAQ
+    .faq-section {
       padding: 2rem 0.5rem;
     }
 
-    .projects-grid {
+    .faq-grid {
       gap: 1.5rem;
-    }
 
-    .project-card {
-      .project-image {
-        height: 200px;
-      }
-
-      .project-info {
-        padding: 1.5rem;
-
+      .faq-item {
         h3 {
           font-size: 1.5rem;
         }
 
         p {
-          font-size: 0.95rem;
+          font-size: 1rem;
         }
-      }
-
-      .project-tech span {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.6rem;
       }
     }
 
@@ -279,6 +291,16 @@
     .services-grid .service {
       padding: 1rem;
 
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .faq-grid .faq-item {
       h3 {
         font-size: 1.3rem;
       }

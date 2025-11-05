@@ -31,8 +31,61 @@ function scrollAnimations() {
   });
 }
 
+function initCarousel() {
+  const carouselTracks = document.querySelectorAll(".carousel-track");
+  if (!carouselTracks.length) return;
+
+  carouselTracks.forEach((carouselTrack) => {
+    const logoItems = Array.from(carouselTrack.children);
+    if (logoItems.length === 0) return;
+
+    logoItems.forEach((item) => {
+      const clone = item.cloneNode(true);
+      carouselTrack.appendChild(clone);
+    });
+
+    carouselTrack.style.width = `${
+      logoItems.length * 2 * 200 + logoItems.length * 2 * 32
+    }px`;
+
+    const totalItems = logoItems.length;
+    const baseDuration = 50;
+    const durationPerItem = 0.5;
+    const scrollDuration = baseDuration + totalItems * durationPerItem;
+    carouselTrack.style.setProperty("--scroll-duration", `${scrollDuration}s`);
+  });
+}
+
+function initAccordion() {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+
+    if (!question) return;
+
+    question.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
+        }
+      });
+
+      if (isActive) {
+        item.classList.remove("active");
+      } else {
+        item.classList.add("active");
+      }
+    });
+  });
+}
+
 function init() {
   scrollAnimations();
+  initCarousel();
+  initAccordion();
 }
 
 document.addEventListener("DOMContentLoaded", init);

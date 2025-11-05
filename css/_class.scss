@@ -95,7 +95,6 @@
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     transition: all v.$transition-smooth;
-    cursor: pointer;
     position: relative;
     overflow: hidden;
 
@@ -192,8 +191,135 @@
   }
 }
 
-// Projects Section
-.projects-section {
+// Technologies Section
+.technologies-section {
+  padding: 4rem 2rem;
+  background-color: white;
+  overflow: hidden;
+
+  .section-title {
+    color: black;
+    margin-bottom: 2rem;
+  }
+}
+
+.technologies-subtitle {
+  font-family: v.$font-secondary-italic;
+  font-weight: 800;
+  text-align: center;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  padding-bottom: 3rem;
+  color: black;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 3rem 0 0 0;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+  }
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  animation: scroll-left var(--scroll-duration, 30s) linear infinite;
+  will-change: transform;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.carousel-reverse {
+  padding-bottom: 3rem;
+
+  .carousel-track {
+    animation: scroll-right var(--scroll-duration, 30s) linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.logo-item {
+  flex-shrink: 0;
+  width: 200px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all v.$transition-smooth;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0.5;
+    transition: all v.$transition-fast;
+  }
+
+  &:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+}
+
+// FAQ Section
+.faq-section {
   padding: 4rem 2rem;
   background-color: black;
 
@@ -202,100 +328,113 @@
   }
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 3rem;
-  max-width: 1200px;
+.faq-accordion {
+  max-width: 900px;
   margin: 0 auto;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
-  overflow: hidden;
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   transition: all v.$transition-smooth;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
+  &.active {
+    .faq-question {
+      padding-left: 2rem;
 
-    .project-overlay {
-      opacity: 1 !important;
-    }
-  }
-
-  .project-image {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform v.$transition-slow;
-    }
-
-    .project-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.7)
-      );
-      display: flex;
-      align-items: flex-end;
-      padding: 2rem;
-      opacity: 0;
-      transition: opacity v.$transition-medium;
-
-      .project-tag {
+      &::before {
         background: white;
-        color: black;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        font-size: 0.9rem;
-        font-weight: 600;
       }
     }
-  }
 
-  .project-info {
-    padding: 2rem;
-
-    h3 {
-      color: white;
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+    .faq-icon {
+      transform: rotate(45deg);
     }
 
-    p {
-      color: white;
-      line-height: 1.6;
-      margin-bottom: 2rem;
+    .faq-answer {
+      max-height: 500px;
+      opacity: 1;
+      padding: 1.5rem 0 2rem 0;
     }
   }
+}
 
-  .project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 2rem 0 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all v.$transition-fast;
+  color: white;
+  text-align: left;
+  min-height: 80px;
+  position: relative;
 
-    span {
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      padding: 0.4rem 0.8rem;
-      border-radius: 0.5rem;
-      font-size: 0.85rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15%;
+    bottom: 15%;
+    width: 4px;
+    background: transparent;
+    transition: all v.$transition-fast;
+  }
+
+  &:hover {
+    padding-left: 2rem;
+
+    &::before {
+      background: rgba(255, 255, 255, 0.5);
     }
+
+    .faq-question-text {
+      color: white;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.faq-question-text {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color v.$transition-fast;
+  flex: 1;
+}
+
+.faq-icon {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: white;
+  transition: transform v.$transition-smooth;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+
+  p {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 1rem;
   }
 }
 
@@ -304,23 +443,15 @@
   padding: 4rem 2rem;
   background: #fff;
   text-align: center;
+
+  .section-title {
+    margin-bottom: 3rem;
+  }
 }
 
 .contact-content {
   max-width: 800px;
   margin: 0 auto;
-
-  h2 {
-    color: black;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 2rem;
-  }
-
-  p {
-    color: black;
-    font-size: 1.3rem;
-    margin-bottom: 4rem;
-  }
 }
 
 .contact-button {
