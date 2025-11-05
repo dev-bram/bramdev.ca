@@ -353,6 +353,9 @@ p {
   position: relative;
   padding: 3rem 0 0 0;
 }
+.carousel-container:not(.carousel-reverse) {
+  margin-bottom: 1rem;
+}
 .carousel-container::before, .carousel-container::after {
   content: "";
   position: absolute;
@@ -374,6 +377,7 @@ p {
 .carousel-track {
   display: flex;
   gap: 2rem;
+  padding-bottom: 3rem;
   animation: scroll-left var(--scroll-duration, 30s) linear infinite;
   will-change: transform;
 }
@@ -398,7 +402,8 @@ p {
   }
 }
 .carousel-reverse {
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 0;
 }
 .carousel-reverse .carousel-track {
   animation: scroll-right var(--scroll-duration, 30s) linear infinite;
@@ -694,9 +699,6 @@ p {
   .faq-grid .faq-item p {
     font-size: 1.1rem;
   }
-  .contact-content h2 {
-    font-size: 2rem;
-  }
   .contact-content p {
     font-size: 1.1rem;
   }
@@ -778,10 +780,6 @@ p {
   }
   .contact-section {
     padding: 2rem 0.5rem;
-  }
-  .contact-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
   }
   .contact-content p {
     font-size: 1rem;

@@ -218,6 +218,10 @@
   position: relative;
   padding: 3rem 0 0 0;
 
+  &:not(.carousel-reverse) {
+    margin-bottom: 1rem;
+  }
+
   &::before,
   &::after {
     content: "";
@@ -243,6 +247,7 @@
 .carousel-track {
   display: flex;
   gap: 2rem;
+  padding-bottom: 3rem;
   animation: scroll-left var(--scroll-duration, 30s) linear infinite;
   will-change: transform;
 
@@ -270,7 +275,8 @@
 }
 
 .carousel-reverse {
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 0;
 
   .carousel-track {
     animation: scroll-right var(--scroll-duration, 30s) linear infinite;
