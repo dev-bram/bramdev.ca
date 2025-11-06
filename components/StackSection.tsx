@@ -74,16 +74,16 @@ function StackSectionComponent({ params }: StackSectionProps) {
   const t = getTranslations(locale);
 
   return (
-    <section className="tech-carousel-section">
-      <div className="container">
+    <section className="relative py-32 px-4">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2
-            className="section-title text-white mb-4"
+            className="section-title text-white"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)" }}
           >
             {t.tech.title}
           </h2>
-          <p className="text-white/60 italic">
+          <p className="text-white/60 italic mt-4">
             {t.tech.subtitle}
           </p>
         </div>
