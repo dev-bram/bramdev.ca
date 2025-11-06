@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "title": "Bram | Développement Web Réactif & Sur Mesure",
+    "description": "Nous développons des applications web rapides, réactives et personnalisées pour vos besoins digitaux. Vous avez un projet en tête ? N'hésitez pas à nous écrire, nous vous répondrons dans les plus brefs délais !",
+    "ogTitle": "Bram | Développement Web Réactif & Sur Mesure",
+    "ogDescription": "Bram développe des applications web rapides, réactives et personnalisées pour vos besoins digitaux."
+  },
+  "nav": {
+    "email": "écrivez-nous",
+    "languageToggle": "en"
+  },
+  "hero": {
+    "tagline": "développement web réactif & sur mesure"
+  },
+  "services": {
+    "title": "_nos services.",
+    "items": [
+      {
+        "title": "Développement web",
+        "description": "Sites vitrine, e-commerce, applications web modernes et réactives."
+      },
+      {
+        "title": "Applications sur mesure",
+        "description": "Solutions parfaitement adaptées à vos besoins professionnels."
+      },
+      {
+        "title": "Intégration API & bases de données",
+        "description": "Connexions sécurisées et efficaces entre vos services."
+      },
+      {
+        "title": "Maintenance & optimisation",
+        "description": "Suivi, sécurité et évolutivité après le lancement."
+      }
+    ]
+  },
+  "tech": {
+    "title": "_la pile.",
+    "subtitle": "technologies derrière nos projets"
+  },
+  "faq": {
+    "title": "_faq.",
+    "items": [
+      {
+        "question": "Combien coûte un site web ?",
+        "answer": "Chaque projet est unique. Les prix varient selon la complexité, les fonctionnalités et vos besoins spécifiques. Contactez-nous pour un devis personnalisé et transparent."
+      },
+      {
+        "question": "Combien de temps prend un projet ?",
+        "answer": "En moyenne, un site vitrine prend 2-4 semaines, tandis qu'une application complexe peut nécessiter 2-3 mois. Nous établissons un calendrier clair dès le début."
+      },
+      {
+        "question": "De quoi ai-je besoin pour commencer ?",
+        "answer": "Principalement votre vision, vos objectifs et tout contenu existant (textes, images, logo). Nous vous guidons à travers le reste lors de notre première rencontre."
+      },
+      {
+        "question": "Que se passe-t-il après le lancement ?",
+        "answer": "Nous offrons un support continu incluant les mises à jour techniques, la sécurité, l'hébergement et les ajustements. Votre site reste performant et à jour."
+      }
+    ]
+  },
+  "contact": {
+    "title": "_prêt?",
+    "subtitle": "discutons de votre vision et transformons-la en réalité",
+    "button": "Contactez-nous",
+    "footer": "© 2025 - Tous droits réservés"
+  }
+}

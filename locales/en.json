@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "title": "Bram | Responsive & Custom Web Development",
+    "description": "We develop fast, responsive, and custom web applications for your digital needs. Have a project in mind? Don't hesitate to reach out, we'll get back to you as soon as possible!",
+    "ogTitle": "Bram | Responsive & Custom Web Development",
+    "ogDescription": "Bram develops fast, responsive, and custom web applications for your digital needs."
+  },
+  "nav": {
+    "email": "email us",
+    "languageToggle": "fr"
+  },
+  "hero": {
+    "tagline": "responsive & custom web development"
+  },
+  "services": {
+    "title": "_our services.",
+    "items": [
+      {
+        "title": "Web development",
+        "description": "Showcase sites, e-commerce, modern and responsive web applications."
+      },
+      {
+        "title": "Custom applications",
+        "description": "Solutions perfectly tailored to your professional needs."
+      },
+      {
+        "title": "API & database integration",
+        "description": "Secure and efficient connections between your services."
+      },
+      {
+        "title": "Maintenance & optimization",
+        "description": "Monitoring, security, and scalability after launch."
+      }
+    ]
+  },
+  "tech": {
+    "title": "_the stack.",
+    "subtitle": "technologies behind our projects"
+  },
+  "faq": {
+    "title": "_faq.",
+    "items": [
+      {
+        "question": "How much does a website cost?",
+        "answer": "Every project is unique. Pricing varies based on complexity, features, and your specific needs. Contact us for a personalized and transparent quote."
+      },
+      {
+        "question": "How long does a project take?",
+        "answer": "On average, a showcase website takes 2-4 weeks, while a complex application may require 2-3 months. We establish a clear timeline from the start."
+      },
+      {
+        "question": "What do I need to start?",
+        "answer": "Mainly your vision, goals, and any existing content (text, images, logo). We'll guide you through the rest during our first meeting."
+      },
+      {
+        "question": "What happens after launch?",
+        "answer": "We offer ongoing support including technical updates, security, hosting, and adjustments. Your site stays performant and up to date."
+      }
+    ]
+  },
+  "contact": {
+    "title": "_ready?",
+    "subtitle": "let's discuss your vision and turn it into reality",
+    "button": "Contact us",
+    "footer": "© 2025 - all rights reserved"
+  }
+}
