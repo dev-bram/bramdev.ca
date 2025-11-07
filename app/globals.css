@@ -211,6 +211,9 @@
   padding-bottom: 3rem;
   animation: scroll-left var(--scroll-duration, 30s) linear infinite;
   will-change: transform;
+  /* GPU acceleration for smoother animations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .logo-item:hover ~ .logo-item,
@@ -236,6 +239,9 @@
   background: transparent;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* GPU acceleration and compositing optimization */
+  transform: translateZ(0);
+  contain: layout style paint;
 }
 
 .logo-item img {
@@ -300,6 +306,9 @@
     0 0 3px rgba(0, 255, 0, 0.9),
     0 0 8px rgba(0, 255, 0, 0.6),
     0 0 16px rgba(0, 255, 0, 0.35);
+  /* GPU acceleration for smooth animation */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @keyframes pulse {

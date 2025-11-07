@@ -1,3 +1,7 @@
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -8,6 +12,11 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+
+  // Optimize package imports for tree-shaking
+  experimental: {
+    optimizePackageImports: ['motion', 'lucide-react'],
+  },
   async headers() {
     return [
       {
@@ -25,10 +34,32 @@ const nextConfig = {
             key: 'X-Content-Type-Options',
             value: 'nosniff'
           },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          },
+        ],
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          },
+        ],
+      },
+      {
+        source: '/public/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          },
         ],
       },
     ];
   },
 };
 
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);

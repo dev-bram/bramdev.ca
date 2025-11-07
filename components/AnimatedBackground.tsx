@@ -52,6 +52,10 @@ function AnimatedBackgroundComponent() {
             background: `radial-gradient(circle, rgba(255, 255, 255, ${orb.opacity}), transparent)`,
             left: `${orb.left}%`,
             top: `${orb.top}%`,
+            // GPU acceleration for smooth blur animations
+            transform: 'translateZ(0)',
+            backfaceVisibility: 'hidden',
+            willChange: 'transform',
           }}
           animate={{
             x: [0, orb.xOffset, 0],

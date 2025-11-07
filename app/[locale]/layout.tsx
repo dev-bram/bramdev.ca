@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Locale, getTranslations, locales } from '@/lib/i18n';
 import '../globals.css';
 
@@ -45,23 +46,23 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <script
-          async
+      <body>
+        {children}
+
+        {/* Google Analytics - loaded after interactive for better performance */}
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NXP72RMC0T"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-NXP72RMC0T');
-            `,
-          }}
+          strategy="afterInteractive"
         />
-      </head>
-      <body>{children}</body>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-NXP72RMC0T');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

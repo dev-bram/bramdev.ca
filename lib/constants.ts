@@ -9,14 +9,14 @@ export const TECH_LOGOS_ROW_1: Logo[] = [
   { src: "/csharp.svg", alt: "C#" },
   { src: "/css.svg", alt: "CSS" },
   { src: "/django.svg", alt: "Django" },
-  { src: "/flask.svg", alt: "Flask" },
+  { src: "/flask.webp", alt: "Flask" },
   { src: "/html.svg", alt: "HTML" },
   { src: "/javascript.svg", alt: "JavaScript" },
   { src: "/jinja.svg", alt: "Jinja" },
   { src: "/mongo.svg", alt: "MongoDB" },
   { src: "/mysql.svg", alt: "MySQL" },
   { src: "/net.svg", alt: ".net" },
-  { src: "/nextjs.svg", alt: "Next.js" },
+  { src: "/nextjs.webp", alt: "Next.js" },
 ];
 
 export const TECH_LOGOS_ROW_2: Logo[] = [
@@ -26,11 +26,11 @@ export const TECH_LOGOS_ROW_2: Logo[] = [
   { src: "/python.svg", alt: "Python" },
   { src: "/react.svg", alt: "React" },
   { src: "/scss.svg", alt: "SCSS" },
-  { src: "/supabase.svg", alt: "Supabase" },
+  { src: "/supabase.webp", alt: "Supabase" },
   { src: "/typescript.svg", alt: "TypeScript" },
-  { src: "/vercel.svg", alt: "Vercel" },
+  { src: "/vercel.webp", alt: "Vercel" },
   { src: "/vue.svg", alt: "Vue" },
-  { src: "/xaml.svg", alt: "XAML" },
+  { src: "/xaml.webp", alt: "XAML" },
 ];
 
 export const SOCIAL_LINKS = [

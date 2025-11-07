@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, memo } from 'react';
+import { useEffect, useRef, memo, useState } from 'react';
 import Image from 'next/image';
 import { use } from 'react';
 import { Locale, getTranslations } from '@/lib/i18n';
@@ -14,9 +14,35 @@ interface LogoCarouselProps {
 const LogoCarousel = memo(function LogoCarousel({ logos, reverse = false }: LogoCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const hasClonedRef = useRef(false);
+  const [isVisible, setIsVisible] = useState(false);
 
+  // Intersection Observer for lazy loading
   useEffect(() => {
-    if (!trackRef.current || hasClonedRef.current) return;
+    if (!trackRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        rootMargin: '50px', // Start loading slightly before visible
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(trackRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Clone logos for infinite scroll
+  useEffect(() => {
+    if (!trackRef.current || hasClonedRef.current || !isVisible) return;
 
     const track = trackRef.current;
     const children = Array.from(track.children) as HTMLElement[];
@@ -42,7 +68,7 @@ const LogoCarousel = memo(function LogoCarousel({ logos, reverse = false }: Logo
     const scrollDuration = baseDuration + totalItems * durationPerItem;
 
     track.style.setProperty('--scroll-duration', `${scrollDuration}s`);
-  }, [logos]);
+  }, [logos, isVisible]);
 
   return (
     <div className={`logo-carousel-container ${reverse ? 'carousel-reverse' : ''}`}>
@@ -54,7 +80,9 @@ const LogoCarousel = memo(function LogoCarousel({ logos, reverse = false }: Logo
               alt={logo.alt}
               width={150}
               height={150}
+              loading="lazy"
               className="square-image object-contain"
+              sizes="150px"
             />
           </div>
         ))}
