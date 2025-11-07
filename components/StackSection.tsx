@@ -3,6 +3,7 @@
 import { useEffect, useRef, memo, useState } from 'react';
 import Image from 'next/image';
 import { use } from 'react';
+import { motion } from 'motion/react';
 import { Locale, getTranslations } from '@/lib/i18n';
 import { Logo, TECH_LOGOS_ROW_1, TECH_LOGOS_ROW_2 } from '@/lib/constants';
 
@@ -104,7 +105,13 @@ function StackSectionComponent({ params }: StackSectionProps) {
   return (
     <section className="relative py-32 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           <h2
             className="section-title text-white"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)" }}
@@ -114,9 +121,9 @@ function StackSectionComponent({ params }: StackSectionProps) {
           <p className="text-white/60 italic mt-4">
             {t.tech.subtitle}
           </p>
-        </div>
-        <LogoCarousel logos={TECH_LOGOS_ROW_1} />
-        <LogoCarousel logos={TECH_LOGOS_ROW_2} reverse={true} />
+        </motion.div>
+          <LogoCarousel logos={TECH_LOGOS_ROW_1} />
+          <LogoCarousel logos={TECH_LOGOS_ROW_2} reverse={true} />
       </div>
     </section>
   );

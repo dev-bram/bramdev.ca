@@ -103,7 +103,7 @@ function HeroSectionComponent({ params }: HeroSectionProps) {
               }}
             />
 
-            <p className="text-white/90 italic relative z-10">
+            <p className="text-white/90 italic relative z-10 text-xs sm:text-base">
               <span className="animated-dot"></span> {t.hero.tagline}
             </p>
           </div>
